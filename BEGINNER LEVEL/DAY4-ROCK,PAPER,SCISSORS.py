@@ -26,7 +26,9 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
+import sys
 import random
+last_line = "initially empty"
 def rps_game():
   player_input =(input("You go first, type R for rock, P for paper, S for scissors "))
   lower_input = player_input.lower()
@@ -40,6 +42,9 @@ def rps_game():
   elif lower_input == "s":
       print("You have chosen SCISSORS")
       print (scissors)
+  else:
+      print("invalid input, try again")
+      sys.exit()
 
   random_weapon = random.randint(0,2)
 
@@ -64,6 +69,6 @@ def rps_game():
       last_line = ("It's a TIE, Play Again")
       print(last_line)
 
-while last_line == "You Won" or last_line == "You Lost" or last_line == "It's a TIE, Play Again":
+while last_line == "You Won" or "You Lost" or "It's a TIE, Play Again" or "initially empty":
   rps_game()
 
